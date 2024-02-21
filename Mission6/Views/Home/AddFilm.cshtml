@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model AddFilm
+
+<h1>Add Film: New Movie Form</h1>
+
+<div>
+    <form method="post">
+        @* cateogry (required) *@
+        <label asp-for="Category">Movie category:</label>
+        <input asp-for="Category" required/>
+        <br />
+        @* title (required) *@
+        <label asp-for="Title">Movie title:</label>
+        <input asp-for="Title" required/>
+        <br />
+        @* year (required) *@
+        <label asp-for="Year">Year made:</label>
+        <input asp-for="Year" required/>
+        <br />
+        @* director (required) *@
+        <label asp-for="Director">Director:</label>
+        <input asp-for="Director" required/>
+        <br />
+        @* rating (dropdown - G, PG, PG-13, R, required) *@
+        <label asp-for="Rating">Rating:</label>
+        <select asp-for="Rating" required>
+            <option value="g">G</option>
+            <option value="pg">PG</option>
+            <option value="pg13">PG-13</option>
+            <option value="r">R</option>
+        </select>
+        <br />
+        @* edited (y/n t/f, not required) *@
+        <label asp-for="Edited">Edited:</label>
+        <select asp-for="Edited">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+        <br />
+        @* lent to (not required) *@
+        <label asp-for="LentTo">Lent To:</label>
+        <input asp-for="LentTo" />
+        <br />
+        @* notes (25 char max, not required) *@
+        <label asp-for="Notes">Notes:</label>
+        <input asp-for="Notes" maxlength="25"/>
+        <br/> <br />
+
+        <button type="submit">Add Movie</button>
+    </form>
+</div>
